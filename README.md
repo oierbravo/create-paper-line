@@ -8,14 +8,18 @@ Features
 - Dryer simple machine with custom recipe type. `create_paper_line:drying`
 - Create recipes for mixing, crushing, milling and sequenced assemply.
 - JEI integration.
-- KubeJS integration.
 - Jade integration.
+- KubeJS integration for the dryer.
 
 Pending Features:
 ----------------
-
-- Mechanical Dryer.
 - Ponder scenes.
+- Progression tweaking.
+- Achievements.
+- Particles.
+- New textures!? (I'll try).
+- Document KubeJS example
+- Upload production line schematic.
 
 ### Drying recipes:
 - `ingredient` is required. One item or tag.
