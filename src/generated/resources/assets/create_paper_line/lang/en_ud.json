@@ -1,0 +1,16 @@
+{
+  "block.create_paper_line.dryer": "ɹǝʎɹᗡ",
+  "fluid.create_paper_line.whitened_wood_pulp": "dןnd pooM pǝuǝʇıɥM",
+  "fluid.create_paper_line.wood_pulp": "dןnd pooM",
+  "item.create_paper_line.cardboard_sheet": "ʇǝǝɥS pɹɐoqpɹɐƆ",
+  "item.create_paper_line.frame": "ǝɯɐɹℲ",
+  "item.create_paper_line.incomplete_book": "ʞooᗺ ǝʇǝןdɯoɔuI",
+  "item.create_paper_line.incomplete_wet_cardboard_sheet": "ʇǝǝɥS pɹɐoqpɹɐƆ ʇǝM ǝʇǝןdɯoɔuI",
+  "item.create_paper_line.incomplete_wet_paper_sheet": "ʇǝǝɥS ɹǝdɐԀ ʇǝM ǝʇǝןdɯoɔuI",
+  "item.create_paper_line.saw_dust": "ʇsnᗡ ʍɐS",
+  "item.create_paper_line.wet_cardboard_sheet": "ʇǝǝɥS pɹɐoqpɹɐƆ ʇǝM",
+  "item.create_paper_line.wet_paper_sheet": "ʇǝǝɥS ɹǝdɐԀ ʇǝM",
+  "item.create_paper_line.whitened_wood_pulp_bucket": "ʇǝʞɔnᗺ dןnԀ pooM pǝuǝʇıɥM",
+  "item.create_paper_line.wood_chips": "sdıɥƆ pooM",
+  "item.create_paper_line.wood_pulp_bucket": "ʇǝʞɔnᗺ dןnԀ pooM"
+}

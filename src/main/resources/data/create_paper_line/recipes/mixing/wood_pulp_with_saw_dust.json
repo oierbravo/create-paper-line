@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "create_paper_line:wood_chips",
+      "count": 1
+    },
+    {
+      "item": "create_paper_line:saw_dust",
+      "count": 2
+    },
+    {
+      "amount": 250,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      "amount": 200,
+      "fluid": "create_paper_line:wood_pulp"
+    }
+  ]
+}

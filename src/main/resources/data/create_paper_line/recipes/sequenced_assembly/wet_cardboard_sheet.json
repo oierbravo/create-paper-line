@@ -1,0 +1,60 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "create_paper_line:frame"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": "create_paper_line:wet_cardboard_sheet"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "create_paper_line:frame"
+        },
+        {
+          "amount": 100,
+          "fluid": "create_paper_line:wood_pulp"
+        }
+      ],
+      "results": [
+        {
+          "item": "create_paper_line:incomplete_wet_cardboard_sheet"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "create_paper_line:incomplete_wet_cardboard_sheet"
+        }
+      ],
+      "results": [
+        {
+          "item": "create_paper_line:incomplete_wet_cardboard_sheet"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "create_paper_line:incomplete_wet_cardboard_sheet"
+        }
+      ],
+      "results": [
+        {
+          "item": "create_paper_line:incomplete_wet_cardboard_sheet"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "create_paper_line:incomplete_wet_cardboard_sheet"
+  }
+}

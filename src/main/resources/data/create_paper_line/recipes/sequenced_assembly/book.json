@@ -1,0 +1,81 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "create_paper_line:cardboard_sheet"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": "minecraft:book"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "create_paper_line:incomplete_book"
+        },
+        {
+          "item": "minecraft:paper"
+        }
+      ],
+      "results": [
+        {
+          "item": "create_paper_line:incomplete_book"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "create_paper_line:incomplete_book"
+        },
+        {
+          "item": "minecraft:paper"
+        }
+      ],
+      "results": [
+        {
+          "item": "create_paper_line:incomplete_book"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "create_paper_line:incomplete_book"
+        },
+        {
+          "item": "create_paper_line:cardboard_sheet"
+        }
+      ],
+      "results": [
+        {
+          "item": "create_paper_line:incomplete_book"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "create_paper_line:incomplete_book"
+        },
+        {
+          "item": "create:super_glue"
+        }
+      ],
+      "results": [
+        {
+          "item": "create_paper_line:incomplete_book"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "create_paper_line:incomplete_book"
+  }
+}

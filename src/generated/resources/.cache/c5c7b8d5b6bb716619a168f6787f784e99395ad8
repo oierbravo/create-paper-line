@@ -1,0 +1,18 @@
+// 1.19.2	2023-08-06T21:32:06.048435212	Registrate Provider for create_paper_line [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+8ed327721c030868e9aa419da956fbc8047c6815 assets/create_paper_line/blockstates/dryer.json
+54f9426c152eea570c9de131183aefb6138a3b47 assets/create_paper_line/lang/en_ud.json
+f98eff280255bf23addcb5f0d5bf8ca99380abea assets/create_paper_line/lang/en_us.json
+3abd86b0f74cadd223c4f1838fc5415c701ee3ea assets/create_paper_line/models/item/cardboard_sheet.json
+f62a01c5001bb8591a831eede4a543ff76eca806 assets/create_paper_line/models/item/dryer.json
+fab159b986e41f085f99f7aac183a94b43208ddd assets/create_paper_line/models/item/frame.json
+559daa1aaafaa83013f5a2857f1b6140473759ef assets/create_paper_line/models/item/incomplete_book.json
+62a96c3c12cd254a4ea9da04c2d62feafb93a9b3 assets/create_paper_line/models/item/incomplete_wet_cardboard_sheet.json
+b4e1b11af3fbedb443b348756a707b7ab2fd6651 assets/create_paper_line/models/item/incomplete_wet_paper_sheet.json
+af5de22f47558ccc5677f3a890757555b996fee6 assets/create_paper_line/models/item/saw_dust.json
+ddb0c697005a93142ee3d3815abc6bcb8085ef3a assets/create_paper_line/models/item/wet_cardboard_sheet.json
+b7c05d7c65d807c216b0b76eafae9e48dbeb44b4 assets/create_paper_line/models/item/wet_paper_sheet.json
+b23f1e8783aad607af56bf2c473e79cf305d6f7e assets/create_paper_line/models/item/whitened_wood_pulp_bucket.json
+db8fbad22b9f516b3707986974c51750d6b7f456 assets/create_paper_line/models/item/wood_chips.json
+f0be4bfc49c1eb7c9f68f279975b941247ddf301 assets/create_paper_line/models/item/wood_pulp_bucket.json
+d306069dadc698928c2b4778d9ae073e77b49e40 data/create_paper_line/loot_tables/blocks/dryer.json
+aff4600625ecc330261acd6a82fa1790d5e1fed5 data/minecraft/tags/blocks/mineable/pickaxe.json

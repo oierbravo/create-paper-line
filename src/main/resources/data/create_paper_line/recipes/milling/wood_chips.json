@@ -1,0 +1,19 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "tag": "minecraft:logs",
+      "count": 1
+    }
+  ],
+  "processingTime": 200,
+  "results": [
+    {
+      "item": "create_paper_line:wood_chips"
+    },
+    {
+      "item": "create_paper_line:saw_dust",
+      "chance": 0.1
+    }
+  ]
+}

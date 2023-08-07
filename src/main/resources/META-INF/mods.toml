@@ -1,0 +1,32 @@
+modLoader = "javafml"
+loaderVersion="[43,)"
+license = "MIT License"
+[[mods]]
+modId = "create_paper_line"
+version = "${file.jarVersion}"
+displayName = "Create Paper Line"
+logoFile="logo.png"
+description = '''
+Automation around paper and books.
+'''
+
+[[dependencies.create_paper_line]]
+modId = "forge"
+mandatory = true
+versionRange="[43.0.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.create_paper_line]]
+modId = "minecraft"
+mandatory = true
+versionRange="[1.19.2,1.20)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.create_paper_line]]
+modId = "create"
+mandatory = true
+versionRange="[0.5.1.c,)"
+ordering = "AFTER"
+side = "BOTH"

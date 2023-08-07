@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "   ",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "tag": "minecraft:slab"
+    }
+  },
+  "result": {
+    "item": "create_paper_line:dryer",
+    "count": 1
+  }
+}

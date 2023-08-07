@@ -1,0 +1,10 @@
+{
+  "type": "create_paper_line:dryer",
+  "ingredient": {
+    "item": "create_paper_line:wet_paper_sheet"
+  },
+  "result": {
+    "item": "minecraft:paper"
+  },
+  "processingTime": 400
+}

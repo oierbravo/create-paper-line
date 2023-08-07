@@ -1,0 +1,38 @@
+{
+
+	"_": "->------------------------]  Game Elements  [------------------------<-",
+
+	"block.create_paper_line.dryer": "Dryer",
+
+	"fluid.create_paper_line.whitened_wood_pulp": "Whitened Wood pulp",
+	"fluid.create_paper_line.wood_pulp": "Wood pulp",
+
+	"item.create_paper_line.cardboard_sheet": "Cardboard Sheet",
+	"item.create_paper_line.frame": "Frame",
+	"item.create_paper_line.incomplete_book": "Incomplete Book",
+	"item.create_paper_line.incomplete_wet_cardboard_sheet": "Incomplete Wet Cardboard Sheet",
+	"item.create_paper_line.incomplete_wet_paper_sheet": "Incomplete Wet Paper Sheet",
+	"item.create_paper_line.saw_dust": "Saw Dust",
+	"item.create_paper_line.wet_cardboard_sheet": "Wet Cardboard Sheet",
+	"item.create_paper_line.wet_paper_sheet": "Wet Paper Sheet",
+	"item.create_paper_line.whitened_wood_pulp_bucket": "Whitened Wood Pulp Bucket",
+	"item.create_paper_line.wood_chips": "Wood Chips",
+	"item.create_paper_line.wood_pulp_bucket": "Wood Pulp Bucket",
+
+
+	"_": "->------------------------]  UI  [------------------------<-",
+
+	"itemGroup.create_paper_line:main": "Create Paper Line",
+
+	"config.jade.plugin_create_paper_line.data": "Dryer data",
+
+	"create_paper_line.recipe.dryer": "Dryer recipe",
+
+	"create_paper_line.dryer.tooltip.progress": "Progress: %d%%",
+
+	"block.create_paper_line.dryer.tooltip": "DRYER",
+	"block.create_paper_line.dryer.tooltip.summary": "Dry items over time",
+
+	"_": "Thank you for translating Create Paper Line!"
+
+}
