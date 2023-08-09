@@ -60,14 +60,14 @@ public class CreatePaperLine
         modEventBus.addListener(EventPriority.LOWEST, CreatePaperLine::gatherData);
     }
     public static void gatherData(GatherDataEvent event) {
-        TagGen.datagen();
+        //TagGen.datagen();
         DataGenerator gen = event.getGenerator();
         if (event.includeClient()) {
             gen.addProvider(true, new LangMerger(gen, MODID, DISPLAY_NAME, ModLangPartials.values()));
         }
         if (event.includeServer()) {
 //            gen.addProvider(true, new AllAdvancements(gen));
-            ProcessingRecipeGen.registerAll(gen);
+           //  ProcessingRecipeGen.registerAll(gen);
 //			AllOreFeatureConfigEntries.gatherData(event);
         }
     }
