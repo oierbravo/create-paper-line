@@ -1,0 +1,38 @@
+{
+
+	"_": "->------------------------]  Game Elements  [------------------------<-",
+
+	"block.create_paper_line.dryer": "Secadora",
+
+	"fluid.create_paper_line.whitened_wood_pulp": "Pulpa de madera blanqueada",
+	"fluid.create_paper_line.wood_pulp": "Pulpa de madera",
+	
+	"item.create_paper_line.cardboard_sheet": "Hoja de cartón",
+	"item.create_paper_line.frame": "Marco",
+	"item.create_paper_line.incomplete_book": "Libro incompleto",
+	"item.create_paper_line.incomplete_wet_cardboard_sheet": "Hoja de cartón mojado incompleta",
+	"item.create_paper_line.incomplete_wet_paper_sheet": "Hoja de papel mojado incompleta",
+	"item.create_paper_line.saw_dust": "Aserrín",
+	"item.create_paper_line.wet_cardboard_sheet": "Hoja de cartón mojada",
+	"item.create_paper_line.wet_paper_sheet": "Hoja de papel mojada",
+	"item.create_paper_line.whitened_wood_pulp_bucket": "Cubo de pulpa de madera blanqueada",
+	"item.create_paper_line.wood_chips": "Astillas de madera",
+	"item.create_paper_line.wood_pulp_bucket": "Cubo de pulpa de madera",
+
+
+	"_": "->------------------------]  UI  [------------------------<-",
+
+	"itemGroup.create_paper_line:main": "Create Paper Line",
+
+	"config.jade.plugin_create_paper_line.data": "Datos de la secadora",
+
+	"create_paper_line.recipe.dryer": "Receta para secadora",
+	
+	"create_paper_line.dryer.tooltip.progress": "Progreso: %d%%",
+	
+	"block.create_paper_line.dryer.tooltip": "SECADORA",
+	"block.create_paper_line.dryer.tooltip.summary": "Secar artículos con el tiempo",
+
+	"_": "Thank you for translating Create Paper Line!"
+
+}
