@@ -10,6 +10,7 @@ Features
 - JEI integration.
 - Jade integration.
 - KubeJS integration for the dryer.
+- Production line schematic file available in the source repository.
 
 Pending Features:
 ----------------
@@ -18,7 +19,6 @@ Pending Features:
 - Achievements.
 - Particles.
 - New textures!? (I'll try).
-- Upload production line schematic.
 
 ### Drying recipes:
 - `ingredient` is required. One item or tag.
