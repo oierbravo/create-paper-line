@@ -98,6 +98,18 @@ minecraft {
                 }
             }
         }
+
+        gameTestServer {
+            workingDirectory project.file('run/gametest')
+            //arg "-mixin.config=${modid}.mixins.json"
+            property 'forge.logging.console.level', 'info'
+            mods {
+                "${modid}" {
+                    source sourceSets.main
+                }
+            }
+            setForceExit false
+        }
     }
 }
 

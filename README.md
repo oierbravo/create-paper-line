@@ -18,18 +18,17 @@ Pending Features:
 - Achievements.
 - Particles.
 - New textures!? (I'll try).
-- Document KubeJS example
 - Upload production line schematic.
 
 ### Drying recipes:
 - `ingredient` is required. One item or tag.
-- `result is` is required. One itemStack.
+- `result` is required. One itemStack.
 - `processingTime` is optional. Default 1.
 
 ### Drying recipe example(included):
 ```
 {
-  "type": "create_paper_line:dryer",
+  "type": "create_paper_line:drying",
   "ingredient": {
       "item": "create_paper_line:wet_cardboard_sheet"
   },
@@ -40,6 +39,16 @@ Pending Features:
 }
 ```
 
-# Thanks to all the translators.
+## KubeJS integration (Requires KubeJS 6.1)
+```
+ServerEvents.recipes(event => {
+    //With default processing time (100)
+    event.recipes.createPaperLineDrying(Item.of("minecraft:white_wool"),Item.of("minecraft:stone"))
+    //With custom processing time
+    event.recipes.createPaperLineDrying(Item.of("minecraft:red_wool"),Item.of("minecraft:cobblestone")).processingTime(500);
+})
+```
+
+Thanks to all the translators.
 ---------
 - es_es: [albertosaurio65](https://github.com/albertosaurio65) 

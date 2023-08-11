@@ -23,7 +23,7 @@ public class ModRecipes {
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, CreatePaperLine.MODID);
 
     public static final RegistryObject<RecipeSerializer<DryingRecipe>> DRYING_SERIALIZER =
-            SERIALIZERS.register("dryer", () -> DryingRecipe.Serializer.INSTANCE);
+            SERIALIZERS.register("drying", () -> DryingRecipe.Serializer.INSTANCE);
 
 
     private static final DeferredRegister<RecipeType<?>> TYPES = DeferredRegister.create(Registry.RECIPE_TYPE_REGISTRY, CreatePaperLine.MODID);
