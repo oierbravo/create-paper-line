@@ -2,7 +2,7 @@
   "itemGroup.create_paper_line:main": "Create Paper Line",
   "config.jade.plugin_create_paper_line.data": "Dryer data",
 
-  "create_paper_line.recipe.dryer": "Dryer recipe",
+  "create_paper_line.recipe.drying": "Drying recipe",
 
   "create_paper_line.dryer.tooltip.progress": "Progress: %d%%",
 
