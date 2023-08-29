@@ -30,6 +30,8 @@
 	"block.create_paper_line.dryer.tooltip": "DRYER",
 	"block.create_paper_line.dryer.tooltip.summary": "Dry items over time",
 
+	"create_paper_line.recipe.drying": "Drying recipe",
+
 
 	"_": "->------------------------]  UI  [------------------------<-",
 
