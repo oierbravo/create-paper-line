@@ -1,0 +1,20 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:stick",
+      "count": 1
+    }
+  ],
+  "processingTime": 100,
+  "results": [
+    {
+      "item": "create_paper_line:wood_chips",
+      "chance": 0.8
+    },
+    {
+      "item": "create_paper_line:saw_dust",
+      "chance": 0.2
+    }
+  ]
+}

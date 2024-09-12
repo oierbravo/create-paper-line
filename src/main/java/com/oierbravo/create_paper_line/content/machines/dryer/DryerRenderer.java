@@ -6,11 +6,13 @@ import com.simibubi.create.foundation.blockEntity.renderer.SmartBlockEntityRende
 import com.simibubi.create.foundation.utility.AngleHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.block.model.ItemTransform;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.core.Direction;
 import net.minecraft.util.Mth;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -48,7 +50,8 @@ public class DryerRenderer extends SmartBlockEntityRenderer<DryerBlockEntity> {
                 .translate(0, 0, blockItem ? 3 / 16f : 5 / 16f)
                 .scale(blockItem ? .75f : .7f);
 
-        itemRenderer.renderStatic(itemStack, ItemTransforms.TransformType.FIXED, light, overlay, ms, buffer, 0);
+        Minecraft mc = Minecraft.getInstance();
+        itemRenderer.renderStatic(itemStack, ItemDisplayContext.FIXED, light, overlay, ms, buffer, mc.level,0     );
         ms.popPose();
     }
 }

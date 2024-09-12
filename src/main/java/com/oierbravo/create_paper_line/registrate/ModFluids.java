@@ -8,8 +8,10 @@ import com.tterrag.registrate.util.entry.FluidEntry;
 import net.minecraft.resources.ResourceLocation;
 
 public class ModFluids {
+
+
     public static final CreateRegistrate REGISTRATE = CreatePaperLine.registrate()
-            .creativeModeTab(() -> ModCreativeTab.MAIN);
+            .setCreativeTab(ModCreativeTab.MAIN_TAB);
 
     public static final FluidEntry<VirtualFluid> WOOD_PULP = createVirtual( "wood_pulp")
             .lang("Wood pulp")

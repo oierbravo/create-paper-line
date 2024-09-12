@@ -1,5 +1,10 @@
 {
   "block.create_paper_line.dryer": "ɹǝʎɹᗡ",
+  "block.create_paper_line.dryer.tooltip": "ᴚƎʎᴚᗡ",
+  "block.create_paper_line.dryer.tooltip.summary": "ǝɯıʇ ɹǝʌo sɯǝʇı ʎɹᗡ",
+  "config.jade.plugin_create_paper_line.data": "ɐʇɐp ɹǝʎɹᗡ",
+  "create_paper_line.dryer.tooltip.progress": "%d%% :ssǝɹboɹԀ",
+  "create_paper_line.recipe.dryer": "ǝdıɔǝɹ ɹǝʎɹᗡ",
   "fluid.create_paper_line.whitened_wood_pulp": "dןnd pooM pǝuǝʇıɥM",
   "fluid.create_paper_line.wood_pulp": "dןnd pooM",
   "item.create_paper_line.cardboard_sheet": "ʇǝǝɥS pɹɐoqpɹɐƆ",
@@ -12,5 +17,6 @@
   "item.create_paper_line.wet_paper_sheet": "ʇǝǝɥS ɹǝdɐԀ ʇǝM",
   "item.create_paper_line.whitened_wood_pulp_bucket": "ʇǝʞɔnᗺ dןnԀ pooM pǝuǝʇıɥM",
   "item.create_paper_line.wood_chips": "sdıɥƆ pooM",
-  "item.create_paper_line.wood_pulp_bucket": "ʇǝʞɔnᗺ dןnԀ pooM"
+  "item.create_paper_line.wood_pulp_bucket": "ʇǝʞɔnᗺ dןnԀ pooM",
+  "itemGroup.create_paper_line:main": "ǝuıꞀ ɹǝdɐԀ ǝʇɐǝɹƆ"
 }

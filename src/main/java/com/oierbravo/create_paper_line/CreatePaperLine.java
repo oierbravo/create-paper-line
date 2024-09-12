@@ -2,22 +2,13 @@ package com.oierbravo.create_paper_line;
 
 import com.mojang.logging.LogUtils;
 import com.oierbravo.create_paper_line.content.machines.dryer.DryerArmInteraction;
-import com.oierbravo.create_paper_line.foundatation.data.ModLangPartials;
 import com.oierbravo.create_paper_line.registrate.*;
 import com.simibubi.create.foundation.data.CreateRegistrate;
-import com.simibubi.create.foundation.data.LangMerger;
-import com.simibubi.create.foundation.data.TagGen;
-import com.simibubi.create.foundation.data.recipe.MechanicalCraftingRecipeGen;
-import com.simibubi.create.foundation.data.recipe.ProcessingRecipeGen;
-import com.simibubi.create.foundation.data.recipe.SequencedAssemblyRecipeGen;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipHelper;
 import com.simibubi.create.foundation.item.TooltipModifier;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -45,8 +36,7 @@ public class CreatePaperLine
 
         REGISTRATE.registerEventListeners(modEventBus);
 
-
-        new ModCreativeTab("main");
+        ModCreativeTab.register(modEventBus);
         ModBlocks.register();
         ModBlockEntities.register();
         ModItems.register();
@@ -56,20 +46,21 @@ public class CreatePaperLine
 
 
         DryerArmInteraction.register();
+        generateLangEntries();
 
-        modEventBus.addListener(EventPriority.LOWEST, CreatePaperLine::gatherData);
+
     }
-    public static void gatherData(GatherDataEvent event) {
-        TagGen.datagen();
-        DataGenerator gen = event.getGenerator();
-        if (event.includeClient()) {
-            gen.addProvider(true, new LangMerger(gen, MODID, DISPLAY_NAME, ModLangPartials.values()));
-        }
-        if (event.includeServer()) {
-//            gen.addProvider(true, new AllAdvancements(gen));
-            ProcessingRecipeGen.registerAll(gen);
-//			AllOreFeatureConfigEntries.gatherData(event);
-        }
+    private void generateLangEntries(){
+
+        registrate().addRawLang("itemGroup.create_paper_line:main", "Create Paper Line");
+        registrate().addRawLang("config.jade.plugin_create_paper_line.data", "Dryer data");
+
+        registrate().addRawLang("create_paper_line.recipe.drying", "Drying recipe");
+
+        registrate().addRawLang("create_paper_line.dryer.tooltip.progress", "Progress: %d%%");
+
+        registrate().addRawLang("block.create_paper_line.dryer.tooltip", "DRYER");
+        registrate().addRawLang("block.create_paper_line.dryer.tooltip.summary", "Dry items over time");
     }
     public static CreateRegistrate registrate() {
         return REGISTRATE;

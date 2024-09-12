@@ -4,6 +4,7 @@ import com.oierbravo.create_paper_line.CreatePaperLine;
 import com.oierbravo.create_paper_line.content.machines.dryer.DryingRecipe;
 import com.oierbravo.create_paper_line.foundatation.utility.ModLang;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
@@ -23,10 +24,10 @@ public class ModRecipes {
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, CreatePaperLine.MODID);
 
     public static final RegistryObject<RecipeSerializer<DryingRecipe>> DRYING_SERIALIZER =
-            SERIALIZERS.register("dryer", () -> DryingRecipe.Serializer.INSTANCE);
+            SERIALIZERS.register("drying", () -> DryingRecipe.Serializer.INSTANCE);
 
 
-    private static final DeferredRegister<RecipeType<?>> TYPES = DeferredRegister.create(Registry.RECIPE_TYPE_REGISTRY, CreatePaperLine.MODID);
+    private static final DeferredRegister<RecipeType<?>> TYPES = DeferredRegister.create(Registries.RECIPE_TYPE, CreatePaperLine.MODID);
 
     public static final RegistryObject<RecipeType<?>> DRYING_TYPE = TYPES.register( ModLang.asId("drying"), () -> simpleType(CreatePaperLine.asResource("drying")));
 

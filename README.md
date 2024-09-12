@@ -29,7 +29,7 @@ Pending Features:
 ### Drying recipe example(included):
 ```
 {
-  "type": "create_paper_line:dryer",
+  "type": "create_paper_line:drying",
   "ingredient": {
       "item": "create_paper_line:wet_cardboard_sheet"
   },

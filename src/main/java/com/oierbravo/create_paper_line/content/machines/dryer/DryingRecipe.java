@@ -3,6 +3,7 @@ package com.oierbravo.create_paper_line.content.machines.dryer;
 import com.google.gson.JsonObject;
 import com.oierbravo.create_paper_line.CreatePaperLine;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -23,16 +24,24 @@ public class DryingRecipe implements Recipe<SimpleContainer>, IRecipeTypeInfo {
         this.result = result;
         this.processingTime = processingTime;
     }
+    DryingRecipe(ResourceLocation id, Ingredient ingredient, ItemStack result){
+        this.id = id;
+        this.ingredient = ingredient;
+        this.result = result;
+        this.processingTime = 200;
+    }
     @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
         return ingredient.test(pContainer.getItem(0));
     }
 
     @Override
-    public ItemStack assemble(SimpleContainer pContainer) {
-        pContainer.removeItem(0,1);
+    public ItemStack assemble(SimpleContainer simpleContainer, RegistryAccess registryAccess) {
+        simpleContainer.removeItem(0,1);
         return result.copy();
     }
+
+
 
     @Override
     public boolean canCraftInDimensions(int pWidth, int pHeight) {
@@ -40,6 +49,10 @@ public class DryingRecipe implements Recipe<SimpleContainer>, IRecipeTypeInfo {
     }
 
     @Override
+    public ItemStack getResultItem(RegistryAccess registryAccess) {
+        return getResultItem();
+    }
+
     public ItemStack getResultItem() {
         return result.copy();
     }

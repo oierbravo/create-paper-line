@@ -142,7 +142,7 @@ public class DryerBlockEntity extends SmartBlockEntity implements IHaveGoggleInf
         sendData();
     }
     private void processRecipe(){
-        inventory.setStackInSlot(0,lastRecipe.assemble(getSimpleContainer()));
+        inventory.setStackInSlot(0,lastRecipe.assemble(getSimpleContainer(), level.registryAccess()));
     }
     public void spawnParticles() {
         ItemStack stackInSlot = inventory.getStackInSlot(0);
@@ -190,22 +190,8 @@ public class DryerBlockEntity extends SmartBlockEntity implements IHaveGoggleInf
             return true;
         }
         return added;
-
     }
 
-
-    /*@Override
-    public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
-        super.addBehaviours(behaviours);
-
-        createTeleport();
-        behaviours.add(teleport);
-    }*/
-
-    /*protected void createTeleport() {
-         teleport = new TeleportLinkBehaviour(this);
-    }
-*/
 
 
 

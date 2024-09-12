@@ -2,6 +2,7 @@ package com.oierbravo.create_paper_line.compat.jei;
 
 import com.oierbravo.create_paper_line.CreatePaperLine;
 import com.oierbravo.create_paper_line.content.machines.dryer.DryingRecipe;
+import com.oierbravo.create_paper_line.foundatation.utility.ModLang;
 import com.oierbravo.create_paper_line.registrate.ModBlocks;
 import com.simibubi.create.compat.jei.BlueprintTransferHandler;
 import com.simibubi.create.compat.jei.DoubleItemIcon;
@@ -190,7 +191,7 @@ public class CreatePaperLineJEI implements IModPlugin {
 
             CreateRecipeCategory.Info<T> info = new CreateRecipeCategory.Info<>(
                     new mezz.jei.api.recipe.RecipeType<>(CreatePaperLine.asResource(name), recipeClass),
-                    Lang.translateDirect("recipe." + name), background, icon, recipesSupplier, catalysts);
+                    ModLang.translate("recipe." + name).component(), background, icon, recipesSupplier, catalysts);
             CreateRecipeCategory<T> category = factory.create(info);
             modCategories.add(category);
             return category;

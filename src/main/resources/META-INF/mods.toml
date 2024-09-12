@@ -13,20 +13,20 @@ Automation around paper and books.
 [[dependencies.create_paper_line]]
 modId = "forge"
 mandatory = true
-versionRange="[43.0.0,)"
+versionRange="[43,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.create_paper_line]]
 modId = "minecraft"
 mandatory = true
-versionRange="[1.19.2,1.20)"
-ordering = "NONE"
-side = "BOTH"
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
 
 [[dependencies.create_paper_line]]
 modId = "create"
 mandatory = true
-versionRange="[0.5.1.c,)"
+versionRange="[0.5.1.h,)"
 ordering = "AFTER"
 side = "BOTH"

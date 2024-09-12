@@ -1,5 +1,5 @@
 {
-  "type": "create_paper_line:dryer",
+  "type": "create_paper_line:drying",
   "ingredient": {
     "item": "create_paper_line:wet_paper_sheet"
   },

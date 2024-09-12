@@ -12,10 +12,12 @@ import snownee.jade.api.IBlockComponentProvider;
 import snownee.jade.api.IServerDataProvider;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
+import snownee.jade.api.ui.BoxStyle;
 import snownee.jade.api.ui.IElementHelper;
 import snownee.jade.api.ui.IProgressStyle;
+import snownee.jade.util.Color;
 
-public class ProgressComponentProvider  implements IBlockComponentProvider, IServerDataProvider<BlockEntity> {
+public class ProgressComponentProvider  implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
 
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
@@ -23,23 +25,24 @@ public class ProgressComponentProvider  implements IBlockComponentProvider, ISer
         if (accessor.getServerData().contains("dryer.progress")) {
             int progress = accessor.getServerData().getInt("dryer.progress");
             IElementHelper elementHelper = tooltip.getElementHelper();
-            IProgressStyle progressStyle = elementHelper.progressStyle();
             if(progress > 0)
-                tooltip.add(elementHelper.progress((float)progress / 100, ModLang.translate("dryer.tooltip.progress", progress).component(), progressStyle,elementHelper.borderStyle()));
+                tooltip.add(elementHelper.progress((float)progress / 100, ModLang.translate("dryer.tooltip.progress", progress).component(),elementHelper.progressStyle().color(Color.hex("#FFFF00").toInt()), BoxStyle.DEFAULT,true));
         }
 
     }
 
-    @Override
-    public void appendServerData(CompoundTag compoundTag, ServerPlayer serverPlayer, Level level, BlockEntity blockEntity, boolean b) {
-        if(blockEntity instanceof DryerBlockEntity){
-            DryerBlockEntity melter = (DryerBlockEntity) blockEntity;
-            compoundTag.putInt("melter.progress",melter.getProgressPercent());
-        }
-    }
 
     @Override
     public ResourceLocation getUid() {
         return CreatePaperLinePlugin.MOD_DATA;
+    }
+
+
+    @Override
+    public void appendServerData(CompoundTag compoundTag, BlockAccessor blockAccessor) {
+        if(blockAccessor.getBlockEntity() instanceof DryerBlockEntity){
+            DryerBlockEntity dryerBlockEntity = (DryerBlockEntity) blockAccessor.getBlockEntity();
+            compoundTag.putInt("dryer.progress",dryerBlockEntity.getProgressPercent());
+        }
     }
 }
