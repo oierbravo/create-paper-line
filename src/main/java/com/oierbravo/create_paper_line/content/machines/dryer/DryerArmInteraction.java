@@ -54,21 +54,5 @@ public class DryerArmInteraction {
             return 1;
         }
 
-        /*@Override
-        public ItemStack insert(ItemStack stack, boolean simulate) {
-            BlockEntity blockEntity = level.getBlockEntity(pos);
-            if (!(blockEntity instanceof DryerBlockEntity dryerTileEntity)) {
-                return stack;
-            }
-
-            ItemStack remainder = stack.copy();
-            ItemStack toInsert = remainder.split(1);
-            if (!simulate) {
-                dryerTileEntity.inventory.insertItem(0,toInsert,false);
-                dryerTileEntity.setChanged();
-                dryerTileEntity.sendData();
-            }
-            return remainder;
-        }*/
     }
 }

@@ -22,6 +22,8 @@ public class ProgressComponentProvider  implements IBlockComponentProvider, ISer
     @Override
     public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
         //CompoundTag serverData = accessor.getServerData();
+        if(!isWorking(accessor))
+            return;
         if (accessor.getServerData().contains("dryer.progress")) {
             int progress = accessor.getServerData().getInt("dryer.progress");
             IElementHelper elementHelper = tooltip.getElementHelper();
@@ -29,6 +31,13 @@ public class ProgressComponentProvider  implements IBlockComponentProvider, ISer
                 tooltip.add(elementHelper.progress((float)progress / 100, ModLang.translate("dryer.tooltip.progress", progress).component(),elementHelper.progressStyle().color(Color.hex("#FFFF00").toInt()), BoxStyle.DEFAULT,true));
         }
 
+    }
+
+    private boolean isWorking(BlockAccessor accessor){
+        if (accessor.getServerData().contains("dryer.is_working")) {
+            return accessor.getServerData().getBoolean("dryer.is_working");
+        }
+        return false;
     }
 
 
@@ -42,6 +51,7 @@ public class ProgressComponentProvider  implements IBlockComponentProvider, ISer
     public void appendServerData(CompoundTag compoundTag, BlockAccessor blockAccessor) {
         if(blockAccessor.getBlockEntity() instanceof DryerBlockEntity){
             DryerBlockEntity dryerBlockEntity = (DryerBlockEntity) blockAccessor.getBlockEntity();
+            compoundTag.putBoolean("dryer.is_working",dryerBlockEntity.isWorking());
             compoundTag.putInt("dryer.progress",dryerBlockEntity.getProgressPercent());
         }
     }

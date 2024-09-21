@@ -5,6 +5,7 @@ import com.oierbravo.create_paper_line.registrate.ModRecipes;
 import com.simibubi.create.content.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.content.equipment.goggles.IHaveHoveringInformation;
 import com.simibubi.create.content.kinetics.belt.behaviour.DirectBeltInputBehaviour;
+import com.simibubi.create.content.kinetics.fan.EncasedFanBlockEntity;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.item.ItemHelper;
@@ -18,6 +19,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -41,7 +43,7 @@ public class DryerBlockEntity extends SmartBlockEntity implements IHaveGoggleInf
 
     private int progress;
 
-    private int processingTime = 100;
+    private int processingTime = 0;
 
     private DryingRecipe lastRecipe;
 
@@ -49,10 +51,15 @@ public class DryerBlockEntity extends SmartBlockEntity implements IHaveGoggleInf
         super(typeIn, pos, state);
         inventory = new SmartInventory(1, this,1, false);
         itemCapability = LazyOptional.of(() -> new CombinedInvWrapper(inventory));
-        inventory.whenContentsChanged($ -> contentsChanged = true);
+        inventory.whenContentsChanged($ -> {
+            contentsChanged = true;
+            if(inventory.isEmpty())
+                inventory.allowInsertion();
 
-        contentsChanged = true;
-        working = true;
+        });
+
+        contentsChanged = false;
+        working = false;
         inventory.forbidExtraction();
 
     }
@@ -108,12 +115,34 @@ public class DryerBlockEntity extends SmartBlockEntity implements IHaveGoggleInf
     }
 
     public int getProgressPercent(){
+        if(!isWorking())
+            return 0;
         return progress * 100 / processingTime;
     }
     @Override
     public void tick() {
         super.tick();
-        assert level != null;
+
+        if (progress < processingTime) {
+            if(progress > 0){
+                setWorking(true);
+            }
+            float progressMultiplier = getFanSpeedMultiplier();
+            progress += (int) (1 * progressMultiplier);
+
+            if (level.isClientSide) {
+                spawnParticles();
+                return;
+            }
+            if (progress >= processingTime)
+                processRecipe();
+            return;
+        }
+
+        if (inventory
+                .getStackInSlot(0)
+                .isEmpty())
+            return;
 
         if( lastRecipe == null || !lastRecipe.matches(getSimpleContainer(),this.getLevel())){
             Optional<DryingRecipe> recipe = ModRecipes.findDrying(inventory.getStackInSlot(0), level);
@@ -125,42 +154,40 @@ public class DryerBlockEntity extends SmartBlockEntity implements IHaveGoggleInf
             sendData();
             return;
         }
-
-        if (progress < processingTime) {
-            if(progress > 0){
-                setWorking(true);
-            }
-            progress += 1;
-
-            if (level.isClientSide) {
-                spawnParticles();
-            }
-            return;
-        }
-        processRecipe();
-        resetProgress();
+        processingTime = lastRecipe.getProcessingTime();
         sendData();
     }
+
+    private float getFanSpeedMultiplier() {
+        BlockPos below = getBlockPos().below();
+        BlockEntity belowBlockEntity =  level.getBlockEntity(below);
+        if(belowBlockEntity instanceof EncasedFanBlockEntity){
+            float fanSpeed = ((EncasedFanBlockEntity) belowBlockEntity).getSpeed();
+            if(fanSpeed > 0)
+                return 1 + fanSpeed/64;
+        }
+
+        return 1;
+    }
+
     private void processRecipe(){
-        inventory.setStackInSlot(0,lastRecipe.assemble(getSimpleContainer(), level.registryAccess()));
+        if(lastRecipe != null) {
+            inventory.setStackInSlot(0, lastRecipe.assemble(getSimpleContainer(), level.registryAccess()));
+            resetProgress();
+            sendData();
+            setChanged();
+        }
     }
     public void spawnParticles() {
-        ItemStack stackInSlot = inventory.getStackInSlot(0);
-        if (stackInSlot.isEmpty())
+        if(!isWorking())
             return;
 
-        //SimpleParticleType data = new SimpleParticleType(false);
-        Vec3 offset = new Vec3(0.1f, 0, 8 /16f);
+        Vec3 offset = new Vec3(0f, 0f, 0f);
 
         Vec3 center = offset.add(VecHelper.getCenterOf(worldPosition));
-        Vec3 target = VecHelper.rotate(offset, 90, Direction.Axis.Y);
-
 
         assert level != null;
-        //level.addParticle(ParticleTypes.WHITE_ASH,  center.x, center.y, center.z, .05f, .05f, .05f);
-        level.addParticle(ParticleTypes.POOF, center.x, center.y + .25f, center.z, 0, 1 / 16f, 0);
-
-        //level.addParticle(ParticleTypes.COMPOSTER, (double)pPos.getX() + (double)0.13125F + (double)0.7375F * (double)randomsource.nextFloat(), (double)pPos.getY() + d0 + (double)randomsource.nextFloat() * (1.0D - d0), (double)pPos.getZ() + (double)0.13125F + (double)0.7375F * (double)randomsource.nextFloat(), d3, d4, d5);
+        level.addParticle(ParticleTypes.POOF, center.x, center.y , center.z, 0, 0.01, 0);
 
     }
     public boolean isWorking(){
@@ -178,7 +205,8 @@ public class DryerBlockEntity extends SmartBlockEntity implements IHaveGoggleInf
 
     public void resetProgress() {
         progress = 0;
-        processingTime = 100;
+        processingTime = 0;
+        //lastRecipe = null;
         setWorking(false);
     }
 
