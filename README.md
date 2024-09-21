@@ -10,15 +10,12 @@ Features
 - JEI integration.
 - Jade integration.
 - KubeJS integration for the dryer.
+- Putting a fan pointing upward speeds the process.
 
 Pending Features:
 ----------------
 - Ponder scenes.
-- Progression tweaking.
 - Achievements.
-- Particles.
-- New textures!? (I'll try).
-- Document KubeJS example
 - Upload production line schematic.
 
 ### Drying recipes:
