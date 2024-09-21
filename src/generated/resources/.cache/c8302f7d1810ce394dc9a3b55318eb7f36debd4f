@@ -1,7 +1,7 @@
-// 1.20.1	2024-09-12T19:15:48.722408507	Registrate Provider for create_paper_line [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-09-21T13:54:43.297477579	Registrate Provider for create_paper_line [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 8ed327721c030868e9aa419da956fbc8047c6815 assets/create_paper_line/blockstates/dryer.json
-783fc00a659bc4900d2c87768a8cf551ab58483e assets/create_paper_line/lang/en_ud.json
-4876711b9d7168c0d8f47e10d2c4b793af6cd685 assets/create_paper_line/lang/en_us.json
+38272967796389a6b2d702a7f3c9ca70492de275 assets/create_paper_line/lang/en_ud.json
+c915efa6efbf240327aae3b9976d6ba4e89a33d8 assets/create_paper_line/lang/en_us.json
 3abd86b0f74cadd223c4f1838fc5415c701ee3ea assets/create_paper_line/models/item/cardboard_sheet.json
 f62a01c5001bb8591a831eede4a543ff76eca806 assets/create_paper_line/models/item/dryer.json
 fab159b986e41f085f99f7aac183a94b43208ddd assets/create_paper_line/models/item/frame.json
